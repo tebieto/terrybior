@@ -6,8 +6,7 @@ import { removeCartItem, addCartItem, reduceCartItem } from '../../redux/cart/ca
 import './checkout-item.styles.scss';
 
 const CheckOutItem = ( { cartItem, removeCartItem, addCartItem, reduceCartItem } ) => {
-    const { name, imageUrl, quantity, price} =cartItem;
-
+    const { name, imageUrl, quantity, price } = cartItem;
     return (
         <div className='checkout-item'>
             <div className='image-container'>
