@@ -16,11 +16,11 @@ import { setCurrentUser } from './redux/user/user.action';
 import { selectCurrentUser } from './redux/user/user.selector';
 
 class App extends React.Component {
-  unsubscribeFriomAuth = null;
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
-    this.unsubscribeFriomAuth = auth.onAuthStateChanged(async userAuth => {
+    const { setCurrentUser} = this.props;
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth) {
         const userRef = createUserProfileDocument(userAuth);
 
@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   componentWillUnmount() {
-    this.unsubscribeFriomAuth();
+    this.unsubscribeFromAuth();
   }
 
   render() {
@@ -58,7 +58,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = dispatch => ({

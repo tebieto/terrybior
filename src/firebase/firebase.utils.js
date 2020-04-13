@@ -13,6 +13,16 @@ const config = {
     measurementId: "G-1Z9NZQVNR8"
 };
 
+
+firebase.initializeApp(config);
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return;
 
@@ -39,13 +49,38 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     return userRef;
 }
 
-firebase.initializeApp(config);
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    const collectionRef = firestore.collection(collectionKey);
+    
+    const batch = firestore.batch();
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+    objectsToAdd.forEach(obj => {
+        const newDocRef = collectionRef.doc();
+        batch.set(newDocRef, obj);
+    });
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+    return await batch.commit()
+}
+
+export const convertCollectionsSnapshotToMap = collections => {
+    
+    const transformedCollection = collections.docs.map(doc => {
+        const { title, items } = doc.data();
+
+        return {
+            id: doc.id,
+            routeName: encodeURI(title.toLowerCase()),
+            title,
+            items,
+
+        }
+    });
+
+    return transformedCollection.reduce((accummulator, collection) => {
+        accummulator[collection.title.toLowerCase()] = collection;
+        return accummulator
+    }, {});
+}
+
 
 export default firebase;
