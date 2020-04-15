@@ -3,8 +3,3 @@
 ## Powered by ReactJs and Firebase
 
 ## Packages
-
-* reselect
-* redux-persist
-* redux-thunk
-* styled-components
