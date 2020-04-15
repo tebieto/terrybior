@@ -1,3 +1,10 @@
 # TerryBior - Fashion Retail App
 
-### Powered by ReactJs, Redux, Redux-Saga, GraphQL, Firebase and SASS 
+## Powered by ReactJs and Firebase
+
+## Packages
+
+* reselect
+* redux-persist
+* redux-thunk
+* styled-components
