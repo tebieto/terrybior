@@ -10,3 +10,6 @@
 * styled-components
 * SASS
 * etc
+
+## Deployed to
+https://terry-bior.herokuapp.com/
