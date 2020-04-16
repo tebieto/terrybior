@@ -18,6 +18,7 @@ class ShopPage extends React.Component {
 
     render() {
         const { match } = this.props;
+
         return (
             <div className='shop-page'>
                 <Route 
