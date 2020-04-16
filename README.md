@@ -1,6 +1,6 @@
 # TerryBior - Fashion Retail App
 
-## Powered by ReactJs and Firebase
+## Powered by ReactJs, Redux and Firebase
 
 ## Packages
 
@@ -10,5 +10,6 @@
 * styled-components
 * SASS
 * etc
+
 ## Deployed to
 https://terry-bior.herokuapp.com/
