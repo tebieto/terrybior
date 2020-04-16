@@ -6,7 +6,7 @@
 
 * reselect
 * redux-persist
-* redux-thunk
+* redux-saga
 * styled-components
 * SASS
 * etc
