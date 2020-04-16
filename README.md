@@ -8,3 +8,5 @@
 * redux-persist
 * redux-thunk
 * styled-components
+* SASS
+* etc
