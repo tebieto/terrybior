@@ -24,6 +24,7 @@ class ShopPage extends React.Component {
 
      render() {
         const { match, isFetchingCollections } = this.props;
+
         return (
             <div className='shop-page'>
                 <Route 
