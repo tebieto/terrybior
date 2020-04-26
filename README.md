@@ -1,6 +1,6 @@
 # TerryBior - Fashion Retail App
 
-## Powered by ReactJs, Redux and Firebase
+## Powered by ReactJs, Redux, Hooks and Firebase
 
 ## Packages
 
