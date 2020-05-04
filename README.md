@@ -1,4 +1,4 @@
-# TerryBior - Fashion Retail App
+# TeeBior - Fashion Retail App
 
 ## Powered by ReactJs, Redux, Hooks, React Lazy and Firebase
 
